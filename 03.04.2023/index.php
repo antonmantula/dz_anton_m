@@ -31,7 +31,7 @@ echo "Получилось число $num2 . <br>";
 echo "Количество итераций: $i2 . <br>";
 
 echo "<br>";
-echo "Задание №3. <br>";
+echo "Задание №3 (switch). <br>";
 echo "<br>";
 $i=5;
 switch ($i){
@@ -47,4 +47,22 @@ switch ($i){
     case '9': echo '0, 1';break;
     case '10': echo '0';break;
     default: echo 'Задайте число от 0 до 10.';
+}
+echo "<br>";
+
+echo "<br>";
+echo "Задание №3 (for). <br>";
+echo "<br>";
+$i2 = 5;
+if ($i2 < 0 || $i2 > 10) {
+    echo 'Задайте число от 0 до 10.';
+} else {
+    $b = 0; 
+    for ($b = 0; $b <= 10-$i2; $b++) {
+        if ($b == 0) {
+            echo $b;
+        }else {
+            echo ", $b";
+        }
+    }
 }
