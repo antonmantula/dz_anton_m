@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles/style-hamster.css">
-    <title>title</title>
-</head>
 <?php
 include_once 'time-theme.php';
 ?>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/style-hamster.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo timetheme1()?>"> 
+    <title>title</title>
+</head>
 <body>
 <table> 
     <caption>

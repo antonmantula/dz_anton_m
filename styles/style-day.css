@@ -18,7 +18,7 @@ hr {
     color:black; /* Цвет линии для остальных браузеров */
     background-color: black; /* Цвет линии для браузера Firefox и Opera */
     height: 2px; /* Толщина линии */
-   }
+}
 
 .menu {
     display: grid;

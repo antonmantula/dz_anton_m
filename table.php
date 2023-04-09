@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include_once 'time-theme.php';
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style-table.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo timetheme1()?>"> 
     <title>Periodical table</title>
 </head>
-<?php
-include_once 'time-theme.php';
-?>
 <body>
 <table width="440" cellpadding="0">
    <tr>
