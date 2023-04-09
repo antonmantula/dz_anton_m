@@ -1,0 +1,14 @@
+.div1, .div2, .div3, .div4 {
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+    background-color: aquamarine;
+    margin: 10px;    
+}
+
+.container {
+    display: flex;
+    background-color: blueviolet;
+    flex-direction: column;
+}

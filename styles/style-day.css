@@ -1,0 +1,259 @@
+body {
+    background-color: darkseagreen;
+    text-align: center;
+    margin: 0px;
+    font-family: Verdana;
+}
+
+.header-main {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 40px;
+}
+
+hr {
+    border: none; /* Убираем границу для браузера Firefox */
+    color:black; /* Цвет линии для остальных браузеров */
+    background-color: black; /* Цвет линии для браузера Firefox и Opera */
+    height: 2px; /* Толщина линии */
+   }
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.links {
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* .info, .photo, .text, .aboutme, .aboutcourse, .name, .header {
+    border-style:dotted; 
+}  */
+
+.infocontainer {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 2fr;
+}
+
+.photo {
+	background-image: url(../images/photo.jpg);
+    background-size: cover;
+    width: 300px;
+    height: 444px;
+    margin-left: 20px;
+}
+
+.text {
+    display: grid;
+    grid-template-columns: 1fr;
+        /* height: 444px; 
+    margin-left: 2%;*/
+}
+
+.name { 
+    color:rgb(14, 139, 241);
+    /* width: 100%; */
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.aboutme {
+    /* width: 30%; */
+    margin: 2%;
+}
+
+.aboutcourse {
+    /* width: 30%; */
+    margin: 2%;
+}
+
+.season {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+
+.seasonpicture {
+    width: 200px;
+    height: 270px;
+}
+
+.winter, .summer, .spring, .fall {
+    display: flex;
+    width: 240px;
+    background-color: rgb(104, 202, 104);
+    margin: 10px;
+    padding: 10px;
+    border: 1px  solid black;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.seasontext {
+    background-color: rgb(136, 228, 136);
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px  solid black;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    font-size: 90%;
+    
+}
+
+.winterpicture, .springpicture, .summerpicture, .fallpicture {
+    background-size: cover;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.winterpicture {
+    background-image: url(../images/winter.png);
+}
+
+.springpicture {
+    background-image: url(../images/spring.png);
+}
+
+.summerpicture {
+    background-image: url(../images/summer.png);
+}
+
+.fallpicture {
+    background-image: url(../images/autumn.png);
+}
+
+.goroda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px; 
+}
+
+.msc, .ekb, .nsk, .vld {
+    justify-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 333px;    
+    width: auto;
+    margin: 10px;
+    background-color: rgb(104, 202, 104);
+    padding: 20px;
+    border: 1px  solid black;
+    border-radius: 10px;
+    grid-gap: 10px;
+}
+
+.mscpic {
+    background-image: url(../images/msc.jpg);
+}
+
+.ekbpic {
+    background-image: url(../images/ekb.jpg);
+}
+
+.nskpic {
+    background-image: url(../images/nsk.jpg);
+}
+
+.vldpic {
+    background-image: url(../images/vld.jpg);
+}
+
+.mscpic, .ekbpic, .nskpic, .vldpic {
+background-size: cover;
+border-radius: 10px;
+/* width: 500px;
+height: 333px; */
+}
+
+.gorodtext {
+    background-color: rgb(136, 228, 136);
+    border: 1px  solid black;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 360px) {
+    .infocontainer {
+        grid-template-columns: 1fr;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .goroda {
+        grid-template-columns: 1fr;
+    }
+    .header-main {
+        grid-template-columns: 1fr;
+        }
+    .menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 361px) and (max-width: 576px) {
+    .infocontainer {
+        grid-template-columns: 1fr;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .goroda {
+        grid-template-columns: 1fr;
+    }
+    .header-main {
+        grid-template-columns: 45px 1fr;
+        }
+    .menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .infocontainer {
+        grid-template-columns: 1fr;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .goroda {
+        grid-template-columns: 1fr;
+    }
+ }
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .infocontainer {
+        /* grid-template-columns: 1fr; */
+        grid-template-rows: 200px 244px;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .goroda {
+        /* grid-template-columns: 1fr; */
+    }
+}
+
+/* @media screen and (min-width: 1200px) {
+    .infocontainer {
+        grid-template-columns: 1fr;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .goroda {
+        grid-template-columns: 1fr;
+    }
+} 
+*/
