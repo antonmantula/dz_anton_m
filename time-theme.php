@@ -10,7 +10,7 @@ if (($h >= $h10) && ($h <= $h22)) {
     } else {
     //echo "Ночь <br>  $h < $h10";
     return 'styles/style-night.css';
-}
+    }
 }
 //echo '<br>' . timetheme1 ();
 ?>
