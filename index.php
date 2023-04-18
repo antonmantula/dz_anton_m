@@ -11,11 +11,10 @@ include_once 'time-theme.php';
     <link rel="stylesheet" type="text/css" href="<?php echo timetheme1()?>"> 
     <title>Домашнее задание</title>
 </head>
-
 <body>
     <header class="header-main">
         <div class="logo">
-            <img src="images/logo.png" alt="menu" height=45>
+           <img src="images/logo.png" alt="menu" height=45>
         </div>
         <div class="menu">
             <div class="links">
@@ -41,8 +40,44 @@ include_once 'time-theme.php';
             </div>
             <div class="text">
                 <div class="about">
-                    <div class="aboutme">Всем привет! Я в настоящее время работаю инженером технического бюро в газовом цехе ПАО "ММК". С разработкой сталкивался только в университете на уроках информатики, т.е. опыта у меня нет. На данный курс пошел, так как есть желание сменить сферу деятельности.</div>
-                    <div class="aboutcourse">Занятиями очень доволен. Пока что все понятно и доходчиво.</div>
+                    <div class="aboutme">
+                        <?php
+                        $str1 = 'Всем привет! Я в настоящее время работаю инженером технического бюро в газовом цехе ПАО "ММК."';
+                        $arr1 = explode('!', $str1);
+                            for ($i1=0; $i1 < 1; $i1++) {
+                                echo '<span style="color: red">' . $arr1[$i1] . '!' .'</span>' . $arr1[1];
+                            }
+                        ?>
+                        С разработкой сталкивался только в университете на уроках информатики, т.е. опыта у меня нет. На данный курс пошел, так как есть желание сменить сферу деятельности.
+                        <?php
+                            echo "<br>";
+                            $dateobirth = DateTime::createFromFormat("d.m.Y", '28.01.1988');
+                            $today = new DateTime();; 
+                            echo 'Дата рождения: ' . $dateobirth->format("d.m.Y") . ' г.';
+                            echo "<br>";
+                            echo 'Текущая дата: ' . $today->format("d.m.Y") . ' г.';
+                            echo "<br>";
+                            $interval = $today->diff($dateobirth);
+                            echo 'Сегодня мне: ' . $interval->days . ' дней.';
+
+                        ?>
+                    </div>
+                    <div class="aboutcourse">
+                        <?php
+                        $str2 = 'Занятиями очень доволен. Пока что все понятно и доходчиво.';
+                        $arr2 = explode(' ', $str2);
+                        //echo '<pre>';
+                        //print_r($arr2);
+                        //echo '</pre>';
+                        foreach ($arr2 as $key => $value) {
+                            if ($key % 2 == 0) {
+                                echo '<span style="color: yellow">' . $value .'</span>' . ' ';
+                            } else {
+                                echo '<span style="color: white">' . $value  .'</span>' . ' ';
+                            }
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,6 +119,9 @@ include_once 'time-theme.php';
                 <div class="gorodtext">Владивосток — город и порт на Дальнем Востоке России; административный центр Приморского края, Владивостокского городского округа а также центр Дальневосточного федерального округа.</div>
             </div>
         </div>
+        <?php
+        
+        ?>
     </main>
 </body>
 </html>
