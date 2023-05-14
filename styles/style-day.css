@@ -1,8 +1,21 @@
 body {
-    background-color: darkseagreen;
+    background-color: rgb(221, 218, 218);
     text-align: center;
     margin: 0px;
     font-family: Verdana;
+}
+
+.link2 {
+    text-decoration: none;
+    font-size: 90%;
+}
+
+a:visited  {
+    color: black;
+}
+
+a:link {
+    color: black;
 }
 
 .header-main {
@@ -22,7 +35,7 @@ hr {
 
 .menu {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .links {
@@ -90,7 +103,7 @@ hr {
 .winter, .summer, .spring, .fall {
     display: flex;
     width: 240px;
-    background-color: rgb(104, 202, 104);
+    background-color: rgb(187, 184, 184);
     margin: 10px;
     padding: 10px;
     border: 1px  solid black;
@@ -99,7 +112,7 @@ hr {
 }
 
 .seasontext {
-    background-color: rgb(136, 228, 136);
+    background-color: rgb(216, 214, 214);
     margin-left: 20px;
     margin-right: 20px;
     border: 1px  solid black;
@@ -147,7 +160,7 @@ hr {
     grid-template-rows: 333px;    
     width: auto;
     margin: 10px;
-    background-color: rgb(104, 202, 104);
+    background-color: rgb(187, 184, 184);
     padding: 20px;
     border: 1px  solid black;
     border-radius: 10px;
@@ -178,7 +191,7 @@ height: 333px; */
 }
 
 .gorodtext {
-    background-color: rgb(136, 228, 136);
+    background-color: rgb(216, 214, 214);
     border: 1px  solid black;
     border-radius: 10px;
 }
@@ -240,9 +253,9 @@ height: 333px; */
     .about {
         grid-template-columns: 1fr;
     }
-    .goroda {
-        /* grid-template-columns: 1fr; */
-    }
+    /* .goroda {
+        grid-template-columns: 1fr;
+    } */
 }
 
 /* @media screen and (min-width: 1200px) {

@@ -5,6 +5,24 @@ body {
     font-family: Verdana;
 }
 
+.link2:visited { /* ночная тема */
+    color: black;
+}
+
+.link2 {
+    text-decoration: none;
+    color: black; /* ночная тема */
+    font-size: 90%;
+}
+
+a:visited  {
+    color: black;
+}
+
+a:link {
+    color: black;
+}
+
 .header-main {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -22,7 +40,7 @@ hr {
 
 .menu {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .links {
@@ -99,7 +117,7 @@ hr {
 }
 
 .seasontext {
-    background-color: rgb(43, 40, 63); /* ночная тема */
+    background-color: rgb(79, 74, 110); /* ночная тема */
     margin-left: 20px;
     margin-right: 20px;
     border: 1px  solid black;
@@ -178,7 +196,7 @@ height: 333px; */
 }
 
 .gorodtext {
-    background-color: rgb(43, 40, 63); /* ночная тема */
+    background-color: rgb(79, 74, 110); /* ночная тема */
     border: 1px  solid black;
     border-radius: 10px;
 }
@@ -249,9 +267,9 @@ height: 333px; */
     .about {
         grid-template-columns: 1fr;
     }
-    .goroda {
-        /* grid-template-columns: 1fr; */
-    }
+    /*.goroda {
+         grid-template-columns: 1fr; 
+    }*/
 }
 
 /*@media screen and (min-width: 1200px) {

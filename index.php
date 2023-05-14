@@ -1,15 +1,34 @@
+<?php
+session_start();
+$_POST['exit'] = isset($_POST['exit']) ? $_POST['exit'] : 0;
+$e = $_POST['exit'];
+    if ($e == 1) {
+        session_unset();
+        session_destroy();
+    }
+?>
 <!DOCTYPE html>
 <html lang="ru">
-<?php
+<?php // подключения php-страницы с функцией для смены темы.
 include_once 'time-theme.php';
+?>
+<?php // подключения php-страницы с функциями.
+include_once 'functions.php';
 ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="stylesheet" href="styles/style.css"> -->
-    <link rel="stylesheet" type="text/css" href="<?php echo timetheme1()?>"> 
     <title>Домашнее задание</title>
+    <?php
+    //echo timetheme1(); // применение функции для смены темы по времени суток
+    if (empty($_COOKIE['color'])) { // применение функции для смены темы вручную
+        echo '<link rel="stylesheet" type="text/css" href="styles/style-day.css">';
+    } else {
+        $color_id = $_COOKIE['color'];
+        echo ColorSwitch($color_id);
+    }
+    ?>
 </head>
 <body>
     <header class="header-main">
@@ -18,17 +37,24 @@ include_once 'time-theme.php';
         </div>
         <div class="menu">
             <div class="links">
-                <a class="link2" href="table.php">Задание из урока №3</a>
-            </div>
-                        <div class="links">
-                <a class="link2" href="form.php">Задание из урока №4</a>
+                <a class="link2" href="authorisation.php">Авторизация</a>
             </div>
             <div class="links">
-                <a class="link2" href="grid.php">Задание из урока №5 (кружки)</a>
+                <a class="link2" href="registration.php">Регистрация</a>
             </div>
             <div class="links">
-                <a class="link2" href="table2.php">Задание из урока №5 (Таблица Менделеева)</a>
+                <a class="link2" href="fact.php">Fact</a>
             </div>
+            <div class="links">
+            <a class="link2" href="bitrix.php">Bitrix</a>
+            </div>
+            <div class="links">
+                <a class="link2" href="account.php"><?
+                if (isset($_SESSION['username']['0'])) {
+                    echo "Личный кабинет, " . $_SESSION['username']['0'];
+                }
+                ?></a>
+          </div>
         </div>
     </header>
     <hr>
@@ -36,46 +62,19 @@ include_once 'time-theme.php';
         <div class="name"><h4>Антон Мантула</h4></div>
         <div class="infocontainer">
             <div class="photo">
-                <!-- <img src="images/photo.jpg" alt="photo"> -->
             </div>
             <div class="text">
                 <div class="about">
                     <div class="aboutme">
-                        <?php
-                        $str1 = 'Всем привет! Я в настоящее время работаю инженером технического бюро в газовом цехе ПАО "ММК."';
-                        $arr1 = explode('!', $str1);
-                            for ($i1=0; $i1 < 1; $i1++) {
-                                echo '<span style="color: red">' . $arr1[$i1] . '!' .'</span>' . $arr1[1];
-                            }
+                        <?php // вызов функции для окрашивания первой фразы разделе "О себе".
+                        echo changecol('Всем привет! В настоящее время работаю инженером технического бюро в газовом цехе ПАО "ММК."');
                         ?>
-                        С разработкой сталкивался только в университете на уроках информатики, т.е. опыта у меня нет. На данный курс пошел, так как есть желание сменить сферу деятельности.
-                        <?php
-                            echo "<br>";
-                            $dateobirth = DateTime::createFromFormat("d.m.Y", '28.01.1988');
-                            $today = new DateTime();; 
-                            echo 'Дата рождения: ' . $dateobirth->format("d.m.Y") . ' г.';
-                            echo "<br>";
-                            echo 'Текущая дата: ' . $today->format("d.m.Y") . ' г.';
-                            echo "<br>";
-                            $interval = $today->diff($dateobirth);
-                            echo 'Сегодня мне: ' . $interval->days . ' дней.';
-
-                        ?>
+                        С разработкой сталкивался только в университете на уроках информатики, т.е. опыта у меня нет. На данный курс пошел, 
+                        так как есть желание сменить сферу деятельности.
                     </div>
                     <div class="aboutcourse">
-                        <?php
-                        $str2 = 'Занятиями очень доволен. Пока что все понятно и доходчиво.';
-                        $arr2 = explode(' ', $str2);
-                        //echo '<pre>';
-                        //print_r($arr2);
-                        //echo '</pre>';
-                        foreach ($arr2 as $key => $value) {
-                            if ($key % 2 == 0) {
-                                echo '<span style="color: yellow">' . $value .'</span>' . ' ';
-                            } else {
-                                echo '<span style="color: white">' . $value  .'</span>' . ' ';
-                            }
-                        }
+                        <?php // вызов функции для окрашивания четный и нечетных слов в разные цвета
+                        echo differentcolor('Занятиями очень доволен. Все понятно и доходчиво.');
                         ?>
                     </div>
                 </div>
@@ -119,9 +118,11 @@ include_once 'time-theme.php';
                 <div class="gorodtext">Владивосток — город и порт на Дальнем Востоке России; административный центр Приморского края, Владивостокского городского округа а также центр Дальневосточного федерального округа.</div>
             </div>
         </div>
-        <?php
-        
-        ?>
     </main>
+    <footer>
+        <?php // вызов функции для расчета разницы в днях между днем рождения и текущей датой
+            echo birthtime('28.01.1988');
+        ?>      
+    </footer>
 </body>
 </html>
