@@ -1,2 +1,2 @@
-$username = 'Anton';
-$password = 123;
+username = Anton
+password = 123
