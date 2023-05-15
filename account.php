@@ -83,14 +83,14 @@ include_once 'functions.php';
         ?>
     </div>
     <div class="links">
-                <form action="" method="post">
-                    <select name="color">
-                        <option value="1">Светлая тема</option>
-                        <option value="2">Темная тема</option>
-                    </select>
-                    <button type="submit">ОК</button>
-                </form>
-            </div>
+        <form action="" method="post">
+            <select name="color">
+                <option value="1">Светлая тема</option>
+                <option value="2">Темная тема</option>
+            </select>
+            <button type="submit">ОК</button>
+        </form>
+    </div>
     <div>
         <br> <br>
         <form action="" method="post" enctype="multipart/form-data">
@@ -99,12 +99,12 @@ include_once 'functions.php';
             </label>
             <br> <br>
             <input type="submit">
-    </form>
+        </form>
+    </div>
     <div class="links">
-                <form action="" method="post">
-                    <button type="submit" name="exit" value="1">Завершить сессию</button>
-                </form>
-            </div>
+        <form action="authorisation.php" method="post">
+            <button type="submit" name="exit" value="1">Завершить сессию</button>
+        </form>
     </div>
 </body>
 </html>
